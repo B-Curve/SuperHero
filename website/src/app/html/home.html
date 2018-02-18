@@ -1,0 +1,19 @@
+<h1 class="home-header">Welcome!</h1>
+<p class="site-description">
+  This website is a SPA (Single Page App) that uses Angular 4 and Spring Boot.
+  Took me a few weeks to finish, but it was a lot of fun and I felt like I really
+  learned a lot!<br /><br />
+  What you will find on this website is a variety of Super Heroes &amp; Villains,
+  Super Sightings, Documented Locations, Super Power Information and Super
+  Organizations like Suicide Squad, Avengers, etc. Feel free to add, edit and remove anything you want!
+</p>
+<div class="card" *ngFor="let s of sightings">
+  <h1 class="headline">{{s.headline}}</h1>
+  <p class="description">{{s.description}}</p>
+  <h3 class="title">Involvement</h3>
+  <ul class="supers">
+    <li *ngFor="let super of s.supers" class="super">{{super.name}}</li>
+  </ul>
+  <p class="address">Address: {{s.location.address}}</p>
+  <p class="date">Date: {{s.date}}</p>
+</div>

@@ -1,0 +1,22 @@
+<div class="wallpaper">
+  <div class="sighting-caption">
+    <h1 class="sighting-text">Super Powers</h1>
+    <h3>The little things that set them apart.</h3>
+  </div>
+</div>
+<div class="button-panel">
+  <button type="button" class="function" (click)="isAddMode ? isAddMode = false : isAddMode = true">Add Power</button>
+  <button type="button" class="function" (click)="isEditMode ? isEditMode = false : isEditMode = true">Edit Powers</button>
+</div>
+<div class="power center" *ngIf="isAddMode">
+  <input #title class="new-title" placeholder="*Title" /><br />
+  <textarea #description class="new-description" placeholder="Description"></textarea>
+  <input type="submit" class="new-submit" value="Submit" (click)="addPower(title.value, description.value)">
+</div>
+<ul class="powers">
+  <li style="position:relative" class="power" *ngFor="let p of powers">
+    <h2 class="power-title">{{p.title}}</h2>
+    <p class="power-description">{{p.description}}</p>
+    <span class="delete" *ngIf="isEditMode" (click)="deletePower(p.superPowerId)">X</span>
+  </li>
+</ul>

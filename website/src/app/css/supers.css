@@ -1,0 +1,237 @@
+.super-banner{
+  height: 25em;
+  width: 100vw;
+  background-image: url('/assets/images/heroesvillains.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-text{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  color: white;
+  padding: .5em 8em .5em 1em;
+  text-align: left;
+  border-top-right-radius: 1em;
+  opacity: .9;
+}
+
+.super-search{
+  width: 12em;
+  font-size: 1.13em;
+  margin: 1em auto;
+  display: inline-block;
+  border-radius: 1em;
+  border: 1px solid black;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: .5em;
+  vertical-align: middle;
+}
+
+.search-function{
+  display: inline-block;
+  background: cornflowerblue;
+  padding: .65em;
+  border: 1px solid black;
+  margin-left: -.33em;
+  vertical-align: middle;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.super-search:focus {
+  outline: none;
+}
+
+.add-super{
+  padding: .11em .5em;
+  border: 1px solid black;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 2em;
+  border-radius: .5em;
+  background: cornflowerblue;
+  cursor: pointer;
+}
+
+.add-super:focus{
+  outline: 0;
+}
+
+.super-card{
+  width: 80vw;
+  height: 18em;
+  border: 1px solid black;
+  margin: 2em auto;
+  position: relative;
+}
+
+.super-edit{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: .33em 1em;
+  background: black;
+  color: #fd3;
+  border-top-left-radius: 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.super-name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: .33em 1em;
+  background: black;
+  color: white;
+  border-bottom-right-radius: 1em;
+}
+
+.super-type{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: .33em 1em;
+  background: black;
+  color: white;
+  border-bottom-left-radius: 1em;
+}
+
+.details{
+  width: 100%;
+  display: block;
+  margin-top: 5em;
+  padding-left: .5em;
+}
+
+.details-item{
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  position: relative;
+}
+
+.details-item h1, .details-item{
+  margin: 0;
+}
+
+.details-item h1{
+  margin-top: -1em;
+}
+
+.cell-header{
+  border: 1px solid black;
+  text-align: center;
+  border-top-right-radius: .5em;
+  border-top-left-radius: .5em;
+}
+
+.cell-body{
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  margin: .3em 0;
+}
+
+.cell-body li{
+  border: 1px solid black;
+  margin: .3em 0;
+  cursor: help;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  text-indent: .5em;
+}
+
+.cell-body li:last-child{
+  border-bottom-right-radius: .33em;
+  border-bottom-left-radius: .33em;
+}
+
+.delete{
+  position: absolute;
+  right: 0;
+  background: #f44;
+  cursor: pointer;
+  width: 1.5em;
+}
+
+.delete-option{
+  position: absolute;
+  left: -1.33em;
+  top: 0;
+  background: red;
+  padding: .3em .3em;
+  font-family: sans-serif;
+  border-top-left-radius: .3em;
+  border-bottom-left-radius: .3em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.absolute-options{
+  position: absolute;
+  top: -5.5em;
+  width: 80%;
+  height: 2em;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: bold;
+  left: 10%;
+}
+
+.name-input{
+  width: 18%;
+  font-size: 1.5em;
+  padding: .8em .5em;
+  text-indent: .75em;
+  font-family: 'Philosopher', sans-serif;
+  border: none;
+  border-bottom-right-radius: 1.67em;
+}
+
+.name-input:focus{
+  outline: 0;
+}
+
+.super-description{
+  position: absolute;
+  top: 6em;
+  left: .5em;
+  font-size: .88em;
+  width: 20%;
+  height: 60%;
+  resize: none;
+  border-radius: .33em;
+}
+
+.super-description:focus{
+  outline: 0;
+}
+
+.type-select{
+  width: 5.5em;
+  height: 2.2em;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-bottom-left-radius: 1.33em;
+  font-size: 1.5em;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.type-select:focus{
+  outline: 0;
+}
+
+.indent-edit{
+  margin-left: 17.5em;
+}

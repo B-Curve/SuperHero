@@ -1,0 +1,25 @@
+<div class="wallpaper">
+  <div class="sighting-caption">
+    <h1 class="sighting-text">Organizations</h1>
+    <h3>Where the good &amp; evil plots are made...</h3>
+  </div>
+</div>
+<div class="buttons">
+  <button type="button" class="button" (click)="isAddMode ? isAddMode = false : isAddMode = true">Add Organization</button>
+  <button type="button" class="button" (click)="isEditMode ? isEditMode = false : isEditMode = true">Edit Organizations</button>
+</div>
+<div *ngIf="isAddMode" class="card o-none">
+  <input #name placeholder="*Name" type="text" class="title t-input" />
+  <textarea #description placeholder="Description" class="description d-input"></textarea>
+  <input #address placeholder="*Address" class="address a-input" />
+  <input #phone placeholder="Phone" class="phone p-input" />
+  <button type="button" class="button" style="margin: 1em auto;display:block;"
+  (click)="addOrganization(name.value, description.value, address.value, phone.value)">Submit</button>
+</div>
+<div *ngFor="let o of organizations" class="card">
+  <span class="delete" (click)="deleteOrganization(o.organizationId)" *ngIf="isEditMode">X</span>
+  <h1 class="title">{{o.name}}</h1>
+  <p class="description">{{o.description}}</p>
+  <p class="address">Address: {{o.address}}</p>
+  <p class="phone">Phone: {{o.phone}}</p>
+</div>

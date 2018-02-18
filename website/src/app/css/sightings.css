@@ -1,0 +1,187 @@
+.wallpaper{
+  height: 25em;
+  width: 100vw;
+  background-image: url('/assets/images/sighting.jpg');
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.sighting-caption{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  color: white;
+  padding: .5em 3em .2em 1em;
+  border-top-right-radius: .5em;
+  opacity: .8;
+}
+
+.sighting-text{
+  margin: 0;
+}
+
+.sighting-list{
+  width: 90vw;
+  margin: 2em auto;
+  display: block;
+  text-align: center;
+}
+
+.sighting-actions{
+  width: 40%;
+  margin: 2em auto 0;
+  text-align: center;
+}
+
+.do{
+  font-size: 1.33em;
+  padding: .3em .6em;
+  border: 1px solid black;
+  border-radius: .3em;
+  margin: 0 .5em;
+  cursor: pointer;
+}
+
+.do:focus{outline: none;}
+
+.edit{background: #ffc;}
+.add{background: #cfc;}
+
+.sighting{
+  display: inline-block;
+  height: 25em;
+  background: #fff;
+  width: 30em;
+  margin: 2em 2em;
+  border: 1px solid black;
+  position: relative;
+}
+
+.sighting-headline{
+  margin: 0;
+  background: black;
+  color: white;
+}
+
+.sighting-description{
+  width: 90%;
+  margin: 0 auto;
+  height: 45%;
+  text-align: left;
+  padding: .3em;
+  overflow: auto;
+}
+
+.sighting-date{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: .3em .6em;
+}
+
+.super-list{
+  list-style: none;
+  padding: .3em 0;
+  overflow: auto;
+  border: 1px solid black;
+  width: 90%;
+  height: 15%;
+  margin: 0 auto;
+  display: block;
+  background: white;
+}
+
+.super{
+  display: inline-flex;
+  text-indent: 5%;
+  padding: .3em .5em;
+  margin: .3em 0;
+  border: 1px solid black;
+  border-radius: .5em;
+  width: 70%;
+  background: beige;
+  position: relative;
+  overflow: hidden;
+}
+
+.delete{
+  position: absolute;
+  right: 0;
+  color: black;
+  background: red;
+  font-family: sans-serif;
+  cursor: pointer;
+  height: 100%;
+  top: 0;
+  padding: .3em .7em;
+  text-indent: -.2em;
+}
+
+.delete-sighting{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: .3em .6em;
+  font-size: 1.25em;
+  font-family: sans-serif;
+  background: red;
+  cursor: pointer;
+}
+
+.h-input{
+  width: 100%;
+  padding: 0;
+  border: 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.d-text{
+  align-self: center;
+  resize: none;
+  font-size: 1.2em;
+  margin-top: .5em;
+  width: 97%;
+}
+
+.date-input{
+  width: 30%;
+  margin: .8em auto;
+  text-align: center;
+  border-radius: .4em;
+}
+
+.new{
+  text-align: center;
+  margin: 2em auto 1em;
+  display: block;
+  height: auto;
+}
+
+select[multiple]{
+  width: 50%;
+  margin: .8em auto;
+  text-align: left;
+  font-family: 'Philosopher', sans-serif;
+  background: white;
+}
+
+.mult-option{
+  position: relative;
+}
+
+.checkspan{
+  position: absolute;
+  right: 0;
+}
+
+.addbutton{
+  margin: 1em auto;
+  font-size: 1em;
+}

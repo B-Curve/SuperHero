@@ -1,0 +1,86 @@
+.site-header{
+  width: 100vw;
+  height: 4em;
+  border-bottom: 1px solid black;
+  background: dodgerblue;
+}
+
+.header-head{
+  float: left;
+  margin: 0 1em;
+  line-height: 2em;
+}
+
+.header-head a, .header-head a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.nav{
+  float: right;
+  display: inline-block;
+  list-style: none;
+  padding-right: 40px;
+  margin: 0;
+  height: 100%;
+  line-height: 4em;
+}
+
+.nav-item{
+  display: inline;
+  padding: 1.5em 1em;
+}
+
+.nav-item, .nav-item:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item:hover{
+  background: beige;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  color: red;
+}
+
+.drop-parent{
+  position: relative;
+}
+
+.drop-child{
+  display: none;
+  position: absolute;
+  top: 4em;
+  z-index: 999;
+  background: dodgerblue;
+  width: 100%;
+  text-align: center;
+}
+
+.supers::after{
+  content: ' ↡';
+  margin-right: -1em;
+}
+
+.drop-parent:hover .drop-child{
+  display: block;
+}
+
+.child-item{
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.child-item:last-child{
+  border-bottom: 1px solid black;
+}
+
+.child-item:hover{
+  background: beige;
+  cursor: pointer;
+  color: red;
+}

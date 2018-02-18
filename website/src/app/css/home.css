@@ -1,0 +1,53 @@
+.home-header{
+  width: 100vw;
+  text-align: center;
+}
+
+.site-description{
+  width: 70vw;
+  margin: 0 auto 2em;
+  background: #ddd;
+  padding: 1em;
+  border-radius: .5em;
+}
+
+.card{
+  width: 70vw;
+  margin: .5em auto;
+  padding: 1em;
+  border: 1px solid black;
+  position: relative;
+  color: dodgerblue;
+  background: #eee;
+}
+
+.headline{
+  margin: 0;
+  width: 100%;
+}
+
+.description{
+  width: 90%;
+  margin: 1em auto;
+  padding: .33em;
+  border: 1px solid black;
+  max-height: 7em;
+  border-radius: .33em;
+  overflow: auto;
+}
+
+.supers{
+  margin: 0 0 2em 0;
+}
+
+.address{
+  position: absolute;
+  bottom: -1em;
+  left: .33em;
+}
+
+.date{
+  position: absolute;
+  bottom: -1em;
+  right: .33em;
+}

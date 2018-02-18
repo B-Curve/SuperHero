@@ -1,0 +1,39 @@
+<div class="wallpaper">
+  <div class="sighting-caption">
+    <h1 class="sighting-text">Sightings</h1>
+    <h3>Who was spotted &amp; where?</h3>
+  </div>
+</div>
+<ul class="sighting-actions">
+  <button type="button" class="do edit" (click)="isEditMode ? isEditMode = false : isEditMode = true">Edit Sightings</button>
+  <button type="button" class="do add" (click)="isAddMode ? isAddMode = false : isAddMode = true">Add Sighting</button>
+</ul>
+<div class="sighting new" *ngIf="isAddMode">
+  <input type="text" placeholder="*Headline..." (change)="sighting.headline = $event.target.value" class="sighting-headline h-input" />
+  <textarea class="sighting-description d-text" (change)="sighting.description = $event.target.value" placeholder="Description..."></textarea>
+  <span>*Date:&nbsp;&nbsp;&nbsp;</span><input (change)="sighting.date = $event.target.value" type="date" class="date-input" /><br />
+  <span>*Location:&nbsp;&nbsp;&nbsp;</span><select (change)="sighting.location.locationId = $event.target.value" class="location-select">
+    <option disabled selected>Location</option>
+    <option *ngFor="let l of locations" [value]="l.locationId">{{l.address}}</option>
+  </select><br /><br />
+  Involved Supers:<br /><select multiple>
+    <option #option (click)="onSuperSelect(option)" class="mult-option" *ngFor="let s of supers" [value]="s.superId">
+      <span class="checkspan" *ngIf="option.ok">✓</span>{{s.name}}
+    </option>
+  </select><br />
+  <button class="addbutton" type="button" (click)="addSighting()">Add Sighting</button>
+</div>
+<ul class="sighting-list">
+  <li class="sighting" *ngFor="let s of sightings">
+    <p class="delete-sighting" *ngIf="isEditMode" (click)="deleteSighting(s)" >X</p>
+    <h1 class="sighting-headline">{{s.headline}}</h1>
+    <p class="sighting-description">{{s.description}}</p>
+    <p class="sighitng-location">Location: {{s.location.address}} ({{s.location.latitude}}, {{s.location.longitude}})</p>
+    <ul class="super-list">
+      <li [style.color]="super.type === 'Hero' ? 'blue' : 'red'" class="super" *ngFor="let super of s.supers">
+        {{super.name}}<span *ngIf="isEditMode" class="delete" (click)="removeSuperFromSighting(s, super.superId)">X</span>
+      </li>
+    </ul>
+    <p class="sighting-date">Date: {{s.date}}</p>
+  </li>
+</ul>

@@ -1,0 +1,26 @@
+<div class="wallpaper">
+  <div class="sighting-caption">
+    <h1 class="sighting-text">Locations</h1>
+    <h3>Places worth talking about...</h3>
+  </div>
+</div>
+<div class="button-panel">
+  <button type="button" class="function" (click)="isAddMode ? isAddMode = false : isAddMode = true">Add Location</button>
+  <button type="button" class="function" (click)="isEditMode ? isEditMode = false : isEditMode = true">Edit Locations</button>
+</div>
+<div class="new-location" *ngIf="isAddMode">
+  <form (submit)="addLocation($event, address.value, description.value, latitude.value, longitude.value)">
+    <input #address type="text" placeholder="Address" />
+    <input #description class="new-description" type="text" placeholder="Description" />
+    <input #latitude type="text" placeholder="*Latitude" />
+    <input #longitude type="text" placeholder="*Longitude" />
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+<ul class="locations">
+  <li class="location" *ngFor="let l of locations">
+    <p class="delete" *ngIf="isEditMode" (click)="deleteLocation(l.locationId)">X</p>
+    <h1 class="location-address">{{l.address}} - <span>({{l.latitude}}, {{l.longitude}})</span></h1>
+    <p class="location-description">{{l.description}}</p>
+  </li>
+</ul>

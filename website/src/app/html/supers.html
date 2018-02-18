@@ -1,0 +1,111 @@
+<div class="super-banner">
+  <div class="banner-text">
+    <h1 class="banner-header">{{title}}</h1>
+    <p class="banner-description">
+      {{subtext}}
+    </p>
+  </div>
+</div>
+<ul style="display:block;list-style:none;padding:0;text-align:center">
+  <input #find (keydown.enter)="search(find.value);" type="text" class="super-search" placeholder="Search for a Super..." />
+  <div (click)="search(find.value)" class="search-function">Search</div><br />
+  <button type="button" class="add-super" (click)="addSuper ? addSuper = false : addSuper = true">New Super</button>
+</ul>
+<div class="super-card" *ngIf="addSuper">
+  <h1 class="super-edit" [style.color]="getReady()" (click)="submitNewSuper()">Submit</h1>
+  <input type="text" placeholder="*Name..." class="super-name name-input" (change)="createdSuper.name = $event.target.value" />
+  <textarea (change)="createdSuper.description = $event.target.value" placeholder="Description..." class="super-description"></textarea>
+  <select class="super-type type-select" [(attr.selected)]="createdSuper.type === '' ? 'type' : createdSuper.type"
+  (change)="createdSuper.type = $event.target.value">
+    <option [value]="type" disabled>*Type...</option>
+    <option [value]="'Hero'">Hero</option>
+    <option [value]="'Villain'">Villain</option>
+  </select>
+  <ul class="details indent-edit">
+    <li class="details-item">
+      <h1 class="cell-header">Powers</h1>
+      <select (change)="newAddPower($event.target.value)" class="absolute-options">
+        <option selected>Add Super Power...</option>
+        <option *ngFor="let p of notIncludedPowers(createdSuper.powers)" [value]="p.superPowerId" >{{p.title}}</option>
+      </select>
+      <ul class="cell-body">
+        <li *ngFor="let p of createdSuper.powers" title="{{p.description}}">
+          {{p.title}}<span class="delete" (click)="deletePowerFromNew(p.superPowerId, createdSuper)">X</span>
+        </li>
+      </ul>
+    </li>
+    <li class="details-item">
+      <h1 class="cell-header">Sightings</h1>
+      <select (change)="newAddSighting($event.target.value)" class="absolute-options">
+        <option selected>Add Sighting...</option>
+        <option *ngFor="let s of notIncludedSightings(createdSuper.sightings)" [value]="s.sightingId" >{{s.headline}}</option>
+      </select>
+      <ul class="cell-body">
+        <li *ngFor="let s of createdSuper.sightings" title="{{s.description}}">
+          {{s.headline}}<span class="delete" (click)="deleteSightingFromNew(s.sightingId, createdSuper)">X</span>
+        </li>
+      </ul>
+    </li>
+    <li class="details-item">
+      <h1 class="cell-header">Organizations</h1>
+      <select (change)="newAddOrganization($event.target.value)" class="absolute-options">
+        <option selected>Add Organization...</option>
+        <option *ngFor="let o of notIncludedOrganizations(createdSuper.organizations)" [value]="o.organizationId" >{{o.name}}</option>
+      </select>
+      <ul class="cell-body">
+        <li *ngFor="let o of createdSuper.organizations" title="{{o.description}}">
+          {{o.name}}<span class="delete" (click)="deleteOrgFromNew(o.organizationId, createdSuper)">X</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<ng-container *ngFor="let super of supers" >
+  <div class="super-card" #card>
+    <h1 class="super-edit" (click)="card.clicked = click(card.clicked)" >Edit</h1>
+    <h1 class="super-name">
+      <span *ngIf="card.clicked" class="delete-option" (click)="deleteSuper(super)">X</span>
+      {{super.name}}
+    </h1>
+    <h1 class="super-type" [style.color]="super.type === 'Hero' ? 'cornflowerblue' : 'red'">{{super.type}}</h1>
+    <ul class="details">
+      <p class="details-item" style="margin-right:3em;">{{super.description}}</p>
+      <li class="details-item">
+        <h1 class="cell-header">Powers</h1>
+        <select *ngIf="card.clicked" (change)="onPowerSelect($event, super)" class="absolute-options">
+          <option selected>Add Super Power...</option>
+          <option *ngFor="let p of notIncludedPowers(super.powers)" [value]="p.superPowerId" >{{p.title}}</option>
+        </select>
+        <ul class="cell-body">
+          <li *ngFor="let p of super.powers" title="{{p.description}}">
+            {{p.title}}<span *ngIf="card.clicked" class="delete" (click)="deletePower(p.superPowerId, super)">X</span>
+          </li>
+        </ul>
+      </li>
+      <li class="details-item">
+        <h1 class="cell-header">Sightings</h1>
+        <select *ngIf="card.clicked" (change)="onSightingsSelect($event, super)" class="absolute-options">
+          <option selected>Add Super Sighting...</option>
+          <option *ngFor="let s of notIncludedSightings(super.sightings)" [value]="s.sightingId" >{{s.headline}}</option>
+        </select>
+        <ul class="cell-body">
+          <li *ngFor="let s of super.sightings" title="{{s.description}}">
+            {{s.headline}}<span *ngIf="card.clicked" class="delete" (click)="deleteSighting(s.sightingId, super)">X</span>
+          </li>
+        </ul>
+      </li>
+      <li class="details-item">
+        <h1 class="cell-header">Organizations</h1>
+        <select *ngIf="card.clicked" (change)="onOrganizationsSelect($event, super)" class="absolute-options">
+          <option selected>Add Super Organization...</option>
+          <option *ngFor="let o of notIncludedOrganizations(super.organizations)" [value]="o.organizationId" >{{o.name}}</option>
+        </select>
+        <ul class="cell-body">
+          <li *ngFor="let o of super.organizations" title="{{o.description}}">
+            {{o.name}}<span *ngIf="card.clicked" class="delete" (click)="deleteOrganization(o.organizationId, super)">X</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</ng-container>

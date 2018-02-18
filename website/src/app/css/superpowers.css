@@ -1,0 +1,146 @@
+.wallpaper{
+  height: 25em;
+  width: 100vw;
+  background-image: url('/assets/images/power.jpg');
+  background-position: top;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.sighting-caption{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  color: white;
+  padding: .5em 3em .2em 1em;
+  border-top-right-radius: .5em;
+  opacity: .8;
+}
+
+.sighting-text{
+  margin: 0;
+}
+
+.button-panel{
+  width: 100vw;
+  text-align: center;
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.function{
+  margin: .5em auto;
+  display: block;
+  width: 10%;
+  height: 2em;
+  font-size: 1em;
+  border-radius: .3em;
+  background: cornflowerblue;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.function:focus{
+  outline: none;
+}
+
+.powers{
+  text-align: center;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.power{
+  display: inline-block;
+  width: 25em;
+  height: 10em;
+  margin: 1em 2em;
+  border: 1px solid black;
+  background: #e5e5e5;
+}
+
+.power-title{
+  margin: 0;
+  background: black;
+  color: white;
+}
+
+.power-description{
+  width: 90%;
+  margin: 1em auto;
+  max-height: 6em;
+  overflow: auto;
+}
+
+.center{
+  margin: 1em auto;
+  padding-bottom: .5em;
+  display: block;
+  background: cornsilk;
+}
+
+.new-title{
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+  background: black;
+  color: white;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.new-description{
+  width: 90%;
+  padding: 0 2.5%;
+  margin: .3em auto;
+  height: 6.5em;
+  border-radius: .2em;
+  background: white;
+  font-size: 1em;
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+  display: block;
+  resize: none;
+}
+
+.new-submit{
+  margin: 0 auto;
+  display: block;
+  width: 30%;
+  font-size: 1.95em;
+}
+
+.power:nth-child(odd) span{
+  position: absolute;
+  top: -.05em;
+  left: -2em;
+  padding: .3em .6em;
+  background: red;
+  border-bottom-left-radius: .3em;
+  border-top-left-radius: .3em;
+  cursor: pointer;
+}
+
+.power:nth-child(even) span{
+  position: absolute;
+  top: -.05em;
+  right: -2em;
+  padding: .3em .6em;
+  background: red;
+  border-bottom-right-radius: .3em;
+  border-top-right-radius: .3em;
+  cursor: pointer;
+}
+
+.power:last-child:nth-child(odd) span{
+  position: absolute;
+  top: -1.8em;
+  left: 46%;
+  padding: .3em .6em;
+  background: red;
+  border-top-right-radius: .3em;
+  border-top-left-radius: .3em;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+}
